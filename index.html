@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        .main {
+            width: 1000px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 400px;
+        }
+        #total {
+            font-size: 300px;
+            color: white;
+        }
+        #plus {
+            border-radius: 50%;
+            padding: 20px;
+            font-size: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70px;
+            height: 70px;
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        #minus {
+            border-radius: 50%;
+            padding: 20px;
+            font-size: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70px;
+            height: 70px;
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        #reset {
+            color: white;
+            display: block;
+            text-align: center;
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <i class='bx bx-reset' id="reset"></i>
+    <div class="main">
+        <button id="minus">-</button>
+        
+        <p id="total">0</p>
+        <button id="plus">+</button>
+
+    </div>
+    <script>
+        let minus = document.getElementById('minus');
+        let plus = document.getElementById('plus');
+        let total = document.getElementById('total');
+        let data = 0;
+  
+        plus.onclick = function plusfc (){
+            total.innerHTML = ++data;
+        }
+        minus.onclick = function plusFc() {
+
+
+            if (data <= 0) {
+                minus.getAttribute('disabled');
+                minus.style.color = 'transparent'
+                minus.style.border = 'transparent'
+            }
+            else {
+                total.innerHTML = --data;
+            }
+        }
+        reset.onclick = function () {
+            data = 0;
+            total.innerHTML = 0;
+        }
+        // minus.onclick = function minusfc (){
+        //     if (data <= 0) {
+        //         minus.getAttribute('disabled');
+        //         minus.style.color = 'transparent'
+        //         minus.style.border = 'transparent'
+        //     }
+        //     total.innerHTML = --data ;
+        // }
+    </script>
+</body>
+</html>
